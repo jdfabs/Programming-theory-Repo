@@ -8,6 +8,7 @@ public class Sphere : Shapes
     void Start()
     {
         color = new int[3];
+        // INHERITANCE
         SetShape();
         SetColor();
         PrintProperties();

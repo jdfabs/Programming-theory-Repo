@@ -5,12 +5,12 @@ using UnityEngine;
 public abstract class Shapes : MonoBehaviour
 {
 
-
+    // ENCAPSULATION
     private string shape { get; set; }
     protected int[] color { get; set; }
 
 
-
+    // ABSTRACTION
     protected virtual void PrintProperties()
     {
         Debug.Log("Shape: " + shape + " color: R:" +

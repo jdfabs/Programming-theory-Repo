@@ -18,7 +18,7 @@ public class Cube : Shapes
     {
         
     }
-
+    // POLYMORPHISM
     protected override void PrintProperties()
     {
         Debug.Log("this is a Square");

@@ -5,35 +5,24 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameObject[] gameObjects;
+    [SerializeField] private GameObject[] spawnedShapes = new GameObject[5];
 
-    private Vector3 spawnPos = new Vector3(-6,0,0);
+    private Vector3 spawnPos = new Vector3(-6, 0, 0);
 
-    // Start is called before the first frame update
-    void Start()
+
+
+    public void Spawn()
     {
-        Spawn();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void Spawn()
-    {
-        /*foreach(GameObject shape in gameObject)
+        for (int i = 0; i < spawnedShapes.Length; i++)
         {
-            
-            Instantiate(shape, spawnPos, shape.transform.rotation);
-            spawnPos += new Vector3(3, 0, 0);
-        }*/
-        for(int i = 0; i < 5; i++)
+            Destroy(spawnedShapes[i]);
+        }
+        Vector3 SpawnPos = spawnPos;
+        for (int i = 0; i < 5; i++)
         {
             int randomShape = Random.Range(0, gameObjects.Length);
-
-            Instantiate(gameObjects[randomShape], spawnPos, gameObjects[randomShape].transform.rotation);
-            spawnPos += new Vector3(3, 0, 0);
+            spawnedShapes[i] = Instantiate(gameObjects[randomShape], SpawnPos, gameObjects[randomShape].transform.rotation);
+            SpawnPos += new Vector3(3, 0, 0);
         }
     }
 }

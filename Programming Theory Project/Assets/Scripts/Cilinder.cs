@@ -18,4 +18,12 @@ public class Cilinder : Shapes
     {
         
     }
+
+    protected override void PrintProperties()
+    {
+        Debug.Log("The colors of this Cilinder are: R:" +
+          color[0] + " B:" +
+          color[1] + " G:" +
+          color[2]);
+    }
 }

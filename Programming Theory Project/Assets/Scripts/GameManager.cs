@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject[] gameObject;
+    public GameObject[] gameObjects;
 
     private Vector3 spawnPos = new Vector3(-6,0,0);
 
@@ -30,9 +30,9 @@ public class GameManager : MonoBehaviour
         }*/
         for(int i = 0; i < 5; i++)
         {
-            int randomShape = Random.Range(0, gameObject.Length);
+            int randomShape = Random.Range(0, gameObjects.Length);
 
-            Instantiate(gameObject[randomShape], spawnPos, gameObject[randomShape].transform.rotation);
+            Instantiate(gameObjects[randomShape], spawnPos, gameObjects[randomShape].transform.rotation);
             spawnPos += new Vector3(3, 0, 0);
         }
     }

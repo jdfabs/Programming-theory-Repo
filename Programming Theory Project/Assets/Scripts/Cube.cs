@@ -18,4 +18,9 @@ public class Cube : Shapes
     {
         
     }
+
+    protected override void PrintProperties()
+    {
+        Debug.Log("this is a Square");
+    }
 }

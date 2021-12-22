@@ -5,10 +5,13 @@ using UnityEngine;
 public abstract class Shapes : MonoBehaviour
 {
 
-    private string shape;
-    protected int[] color;
 
-    protected void PrintProperties()
+    private string shape { get; set; }
+    protected int[] color { get; set; }
+
+
+
+    protected virtual void PrintProperties()
     {
         Debug.Log("Shape: " + shape + " color: R:" +
            color[0] + " B:" +
@@ -17,12 +20,16 @@ public abstract class Shapes : MonoBehaviour
     }
     protected void SetShape()
     {
-        shape =  gameObject.name.Remove(gameObject.name.Length-7,7);
+        shape = gameObject.name.Remove(gameObject.name.Length - 7, 7);
 
     }
 
     protected void SetColor()
     {
+
+
+
+
         float r = RandomValue(1);
         float b = RandomValue(1);
         float g = RandomValue(1);
